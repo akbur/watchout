@@ -70,3 +70,9 @@ setInterval(function() {
 }, 1500);
 
 </script>
+
+currDistance = sqrt((playerX-enemyX)^2 + (playerY-enemyY)^2)
+
+if (currDistance < enemyRadius + playerRadius ) {
+  collisions++;
+} 
