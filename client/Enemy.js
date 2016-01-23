@@ -1,14 +1,14 @@
-var Enemy = function(x, y) {
+var Dot = function(x, y) {
   this.x = x;
   this.y = y;
 };
 
-Enemy.prototype.enemyFactory = function (num) {
+Dot.prototype.enemyFactory = function (num) {
   var enemies = [];
   for (var i = 0; i < num; i++) {
-    var enemy = new Enemy(
-      Enemy.prototype.randomCoord(),
-      Enemy.prototype.randomCoord()
+    var enemy = new Dot (
+      Dot.prototype.randomCoord(),
+      Dot.prototype.randomCoord()
       );
     
     enemies.push(enemy);
@@ -17,6 +17,6 @@ Enemy.prototype.enemyFactory = function (num) {
   return enemies;
 };
 
-Enemy.prototype.randomCoord = function() {
+Dot.prototype.randomCoord = function() {
   return Math.random() * (spec.boardWidth - spec.enemyRadius);
 };

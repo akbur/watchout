@@ -5,6 +5,10 @@ Feel free to use it if you like. */
 .enemy {
   r: 50;
   fill: black;
-  background-image: url('asteroid.png');
 }
+.player {
+  r: 20;
+  fill: red;
+}
+
 
