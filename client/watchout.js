@@ -8,9 +8,12 @@ var spec = { "boardHeight":500,
            };
 
 
-var board = d3.select("body").append("svg")
+var board = d3.select("svg")
   .attr('height', spec.boardHeight)
   .attr('width', spec.boardWidth);
+
+
+
 var enemies = Dot.prototype.enemyFactory(spec.numberOfEnemies);
 var player = new Dot(spec.boardWidth/2, spec.boardHeight/2);
 

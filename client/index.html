@@ -11,9 +11,28 @@
       <div class="current">Current Score: <span>0</span></div>
       <div class="collisions">Collisions: <span>0</span></div>
     </div>
+    <svg>
+      <defs>
+        <pattern id="asteroid" x="0%" y="0%" height="100%" width="100%">
+          <image xlink:href="asteroid.png"></image>
+        </pattern>
+      </defs>
+    </svg>
     <script src="lib/d3.js" charset="utf-8"></script>
     <script src='Dot.js'></script>
     <script src='Score.js'></script>
     <script src='watchout.js'></script>
   </body>
 </html>
+
+ <!-- pattern -->
+<!--   <defs>
+    <pattern id="image" 
+             viewBox="0 0 512 512">
+      <image x="0%" y="0%" width="512" height="512" xlink:href="https://cdn3.iconfinder.com/data/icons/people-professions/512/Baby-512.png"></image>
+    </pattern>
+  </defs>
+    
+  <circle id="sd" class="medium" cx="5%" cy="40%" r="5%" fill="url(#image)" stroke="lightblue" stroke-width="0.5%" />
+</svg>
+ -->
