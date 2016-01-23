@@ -7,12 +7,16 @@ Enemy.prototype.enemyFactory = function (num) {
   var enemies = [];
   for (var i = 0; i < num; i++) {
     var enemy = new Enemy(
-      Math.random() * (500 - 50),
-      Math.random() * (500 - 50)
-    );
+      Enemy.prototype.randomCoord(),
+      Enemy.prototype.randomCoord()
+      );
     
     enemies.push(enemy);
   }
   
   return enemies;
+};
+
+Enemy.prototype.randomCoord = function() {
+  return Math.random() * (spec.boardWidth - spec.enemyRadius);
 };
