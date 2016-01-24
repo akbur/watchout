@@ -8,7 +8,7 @@ var spec = { "boardHeight":500,
            };
 
 
-var board = d3.select("svg")
+var board = d3.select("body").append("svg")
   .attr('height', spec.boardHeight)
   .attr('width', spec.boardWidth);
 
@@ -34,17 +34,19 @@ function update(enemies) {
   
 
   //ENTER
-  enemyData.enter().append("circle")
+  enemyData.enter().append("image")
     .attr("class", "enemy")
-    .attr("cx", function (d, i){ return d.x; })
-    .attr("cy", function (d, i){ return d.y; });
+    .attr("xlink:href", "asteroid.png")
+    .attr("x", function (d, i){ return d.x; })
+    .attr("y", function (d, i){ return d.y; })
+    .attr({"height":spec.enemyRadius, "width":spec.enemyRadius});
     
 
   //UPDATE
   enemyData.transition()
     .tween('track-position', function (d) {   
-      d.x = this.cx.baseVal.value;
-      d.y = this.cy.baseVal.value;
+      d.x = this.x.baseVal.value;
+      d.y = this.y.baseVal.value;
       
       var distance = Math.sqrt(Math.pow((d.x-player.x), 2) + Math.pow((d.y-player.y), 2));
       
@@ -56,8 +58,8 @@ function update(enemies) {
         scores[1].value = 0;
       }
     })
-    .attr({cx: function(d){ return d.randomCoord(); },
-           cy: function(d){ return d.randomCoord(); } 
+    .attr({x: function(d){ return d.randomCoord(); },
+           y: function(d){ return d.randomCoord(); } 
     });  
 
   //EXIT
