@@ -7,8 +7,8 @@ Dot.prototype.enemyFactory = function (num) {
   var enemies = [];
   for (var i = 0; i < num; i++) {
     var enemy = new Dot (
-      Dot.prototype.randomCoord(),
-      Dot.prototype.randomCoord()
+      Dot.prototype.randomCoord().x,
+      Dot.prototype.randomCoord().y
       );
     
     enemies.push(enemy);

@@ -5,9 +5,22 @@ Feel free to use it if you like. */
 * {
   transform-origin: unset;
 }
+
+body {
+  background-image: url("images/space.png");
+  color: white;
+  font-family: helvetica, arial;
+}
+
+.board {
+  border: 10px solid white;
+  position: relative;
+  left: 10%;
+  top: 10%
+}
+
 .enemy {
   r: 50;
-  fill: "url(#asteroid)";
   animation-name: whirl;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -21,10 +34,3 @@ Feel free to use it if you like. */
     transform: rotate(360deg);
   }
 }
-
-.player {
-  r: 20;
-  fill: red;
-}
-
-

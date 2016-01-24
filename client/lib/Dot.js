@@ -7,8 +7,8 @@ Dot.prototype.enemyFactory = function (num) {
   var enemies = [];
   for (var i = 0; i < num; i++) {
     var enemy = new Dot (
-      Dot.prototype.randomCoord(),
-      Dot.prototype.randomCoord()
+      Dot.prototype.randomCoord().x,
+      Dot.prototype.randomCoord().y
       );
     
     enemies.push(enemy);
@@ -18,7 +18,11 @@ Dot.prototype.enemyFactory = function (num) {
 };
 
 Dot.prototype.randomCoord = function() {
-  return Math.random() * (spec.boardWidth - spec.enemyRadius);
+  return {
+           'x' : Math.random() * (spec.boardWidth - spec.enemyRadius),
+           'y' : Math.random() * (spec.boardHeight - spec.enemyRadius)
+         }
 };
+
 
 
