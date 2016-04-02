@@ -1,4 +1,4 @@
-function updateEnemies(enemies) {
+function updateEnemies (enemies) {
 
   //JOIN
   var enemyData = board.selectAll(".enemy").data(enemies);
@@ -11,10 +11,9 @@ function updateEnemies(enemies) {
     .attr("y", function (d){ return d.y; })
     .attr({"height":spec.enemyRadius, "width":spec.enemyRadius});
     
-
   //UPDATE
   enemyData.transition()
-    .tween('track-position', function (d) {   
+    .tween('track-position', function (d) {
       d.x = this.x.baseVal.value;
       d.y = this.y.baseVal.value;
       
@@ -29,19 +28,19 @@ function updateEnemies(enemies) {
       }
     })
     .attr({ x: function(d){ return d.randomCoord().x; },
-            y: function(d){ return d.randomCoord().y; } 
-    });  
+            y: function(d){ return d.randomCoord().y; }
+    });
 
   //EXIT
   enemyData.exit().remove();
 }
 
-function updateScoreboard(scoreboard) {
+function updateScoreboard (scoreboard) {
   var scoreData = scoreboard.selectAll("div").data(scores)
                   .text(function (d, i) {
                     if (i === 1) {
                       d.value++;
                     }
-                    return d.text + d.value});
-  
+                    return d.text + d.value;
+                  });
 }

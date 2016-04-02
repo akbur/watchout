@@ -1,7 +1,7 @@
 var Score = function (text, value) {
   this.text = text;
   this.value = value;
-}
+};
 
 Score.prototype.scoreFactory = function () {
   var highScore = new Score("High Score: ", 0);

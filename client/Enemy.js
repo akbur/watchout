@@ -9,16 +9,12 @@ Dot.prototype.enemyFactory = function (num) {
     var enemy = new Dot (
       Dot.prototype.randomCoord().x,
       Dot.prototype.randomCoord().y
-      );
-    
+    );
     enemies.push(enemy);
   }
-  
   return enemies;
 };
 
-Dot.prototype.randomCoord = function() {
+Dot.prototype.randomCoord = function () {
   return Math.random() * (spec.boardWidth - spec.enemyRadius);
 };
-
-
